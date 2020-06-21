@@ -33,7 +33,7 @@ def build_packet_callback(time_fmt, logger, delimiter, mac_info, ssid, rssi):
 		# determine preferred time format 
 		log_time = str(int(time.time()))
 		if time_fmt == 'iso':
-			log_time = datetime.datetime.now().isoformat()
+			log_time = datetime.now().isoformat()
 
 		fields.append(log_time)
 
@@ -53,7 +53,7 @@ def build_packet_callback(time_fmt, logger, delimiter, mac_info, ssid, rssi):
 			fields.append(packet.info)
 			
 		if rssi:
-			rssi_val = -(256-ord(packet.notdecoded[-4:-3]))
+			rssi_val = packet.dBm_AntSignal
 			fields.append(str(rssi_val))
 
 		logger.info(delimiter.join(fields))
