@@ -3,6 +3,19 @@ A simple command line tool for monitoring and logging 802.11 probe frames
 
 I decided to build this simple python script using scapy so that I could record 802.11 probe frames over a long period of time. This was specifically useful in my use case: proving that a person or device was present at a given location at a given time.
 
+## Dependencies
+This requires netaddr and scapy to be installed in Python, which can be done using the following code.
+```
+# With root priviledges
+sudo pip install netaddr
+sudo pip install scapy
+
+# Or, without root priviledges
+pip install --user netaddr
+pip install --user scapy
+```
+
+
 ## Usage
 
 ```
