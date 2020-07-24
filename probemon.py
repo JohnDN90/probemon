@@ -76,7 +76,7 @@ def main():
 	args = parser.parse_args()
 
 	if not args.interface:
-		print "error: capture interface not given, try --help"
+		print("error: capture interface not given, try --help")
 		sys.exit(-1)
 	
 	DEBUG = args.debug
